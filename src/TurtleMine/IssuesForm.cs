@@ -135,6 +135,11 @@ namespace TurtleMine
 			get; private set;
 		}
 
+		public bool KsGameMode
+		{
+			get; private set;
+		}
+		
 		private bool enabledControlWindow
 		{
 			set
@@ -304,6 +309,8 @@ namespace TurtleMine
 
 			//Include Summary
 			chkIncludeSummary.Checked = settings.IncludeSummary;
+			//KsGameMode
+			chkKsGameMode.Checked = settings.KsGameMode;
 		}
 
 		private void loadListViewSettings()
@@ -384,7 +391,8 @@ namespace TurtleMine
 							   SortColumn = lvwColumnSorter.SortColumn,
 							   SortOrder = lvwColumnSorter.Order,
 							   ColumnsDisplay = new Dictionary<int, int>(),
-							   IncludeSummary = chkIncludeSummary.Checked
+							   IncludeSummary = chkIncludeSummary.Checked,
+							   KsGameMode = chkKsGameMode.Checked,
 						   };
 
 			//Save Columns list
@@ -829,6 +837,11 @@ namespace TurtleMine
 			IncludeSummary = chkIncludeSummary.Checked;
 		}
 
+		private void chkKsGameMode_CheckedChanged(object sender, EventArgs e)
+		{
+			KsGameMode = chkKsGameMode.Checked;
+		}
+		
 		private void cboFields_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			//Redo search

@@ -128,6 +128,7 @@ namespace TurtleMine
         private const string KeySortColumn = "SortColumn";
         private const string KeySortOrder = "SortOrder";
         private const string KeyIncludeSummary = "IncludeSummary";
+        private const string KeyKsGameMode = "KsGameMode";
 
         #endregion
 
@@ -174,6 +175,8 @@ namespace TurtleMine
         /// </summary>
         /// <value><c>true</c> if [include summary]; otherwise, <c>false</c>.</value>
         public bool IncludeSummary { get; set; }
+        
+        public bool KsGameMode { get; set; }
 
         #endregion
 
@@ -216,6 +219,11 @@ namespace TurtleMine
             if (includeSummary != null)
             {
                 IncludeSummary = bool.Parse(includeSummary.ToString());
+            }
+            var ksGameMode = myReg.GetValue(KeyKsGameMode);
+            if (ksGameMode != null)
+            {
+                KsGameMode = bool.Parse(ksGameMode.ToString());
             }
         }
 
@@ -291,6 +299,7 @@ namespace TurtleMine
                 myReg.SetValue(KeySortOrder, SortOrder);
 
                 myReg.SetValue(KeyIncludeSummary, IncludeSummary);
+                myReg.SetValue(KeyKsGameMode, KsGameMode);
             }
 
 

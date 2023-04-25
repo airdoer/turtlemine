@@ -39,6 +39,7 @@
             this.wbrDescription = new System.Windows.Forms.WebBrowser();
             this.pnlOkCancel = new System.Windows.Forms.Panel();
             this.chkIncludeSummary = new System.Windows.Forms.CheckBox();
+            this.chkKsGameMode = new System.Windows.Forms.CheckBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -155,6 +156,7 @@
             // pnlOkCancel
             // 
             this.pnlOkCancel.Controls.Add(this.chkIncludeSummary);
+            this.pnlOkCancel.Controls.Add(this.chkKsGameMode);
             this.pnlOkCancel.Controls.Add(this.btnOk);
             this.pnlOkCancel.Controls.Add(this.btnCancel);
             resources.ApplyResources(this.pnlOkCancel, "pnlOkCancel");
@@ -170,6 +172,15 @@
             this.helpProviderToolTip.SetShowHelp(this.chkIncludeSummary, ((bool)(resources.GetObject("chkIncludeSummary.ShowHelp"))));
             this.chkIncludeSummary.UseVisualStyleBackColor = false;
             this.chkIncludeSummary.CheckedChanged += new System.EventHandler(this.chkIncludeSummary_CheckedChanged);
+            // 
+            // chkKsGameMode
+            // 
+            resources.ApplyResources(this.chkKsGameMode, "chkKsGameMode");
+            this.helpProviderToolTip.SetHelpString(this.chkKsGameMode, resources.GetString("chkKsGameMode.HelpString"));
+            this.chkKsGameMode.Name = "chkKsGameMode";
+            this.helpProviderToolTip.SetShowHelp(this.chkKsGameMode, ((bool)(resources.GetObject("chkKsGameMode.ShowHelp"))));
+            this.chkKsGameMode.UseVisualStyleBackColor = false;
+            this.chkKsGameMode.CheckedChanged += new System.EventHandler(this.chkKsGameMode_CheckedChanged);
             // 
             // btnOk
             // 
@@ -431,6 +442,7 @@
         private System.Windows.Forms.ImageList ilstSortImages;
         private System.Windows.Forms.ToolStripMenuItem chooseColumnsToDisplayToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkIncludeSummary;
+        private System.Windows.Forms.CheckBox chkKsGameMode;
         private System.Windows.Forms.Timer tmrNewVersion;
         private System.Windows.Forms.ComboBox cboFields;
         private System.Windows.Forms.Panel pnlOkCancel;

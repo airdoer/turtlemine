@@ -136,8 +136,29 @@ namespace TurtleMine
                 {
                     //Not found at all
 
+                    if (form.KsGameMode)
+                    {
+                        if (originalMessage.Length > 0)
+                        {
+                            result.AppendLine(originalMessage);
+                        }
+                        //Add each checked issue
+                        foreach (var item in form.ItemsFixed)
+                        {
+                            if (form.IncludeSummary)
+                            {
+                                result.AppendLine(string.Format("#{0}{1}", item.Number,
+                                    item.Description));   
+                            }
+                            else
+                            {
+                                result.AppendLine(string.Format("#{0}", item.Number));
+                            }
+                        }
+                    }
+                    
                     //Check if we include summary
-                    if (form.IncludeSummary)
+                    else if (form.IncludeSummary)
                     {
                         if (originalMessage.Length > 0)
                         {
@@ -147,7 +168,7 @@ namespace TurtleMine
                         //Add each checked issue
                         foreach (var item in form.ItemsFixed)
                         {
-                            result.AppendLine(string.Format("({0} #{1}) : {2}", Strings.IssueText, item.Number,
+                            result.AppendLine(string.Format("({0} #{1}) {2}", Strings.IssueText, item.Number,
                                                 item.Description));
                         }
                     }

@@ -30,6 +30,12 @@ Rechte Maustaste für weitere Optionen
   <data name="chkIncludeSummary.Text" xml:space="preserve">
     <value>&amp;Füge Meldungstitel ein</value>
   </data>
+  <data name="chkKsGameMode.HelpString" xml:space="preserve">
+    <value>Füge den Meldungstext in die Commit-Meldung ein</value>
+  </data>
+  <data name="chkKsGameMode.Text" xml:space="preserve">
+    <value>&amp;Füge Meldungstitel ein</value>
+  </data>
   <data name="btnOk.HelpString" xml:space="preserve">
     <value>Schließe das Fenster und ergänze Referenzen auf alle ausgewählten Tickets in der Commit-Meldung</value>
   </data>
